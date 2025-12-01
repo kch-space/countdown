@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--layout.ejs的意思是共用的布局文件-->
+<!--partial()是个函数，来包含其他文件，使得我们能够更好的组织代码。-->
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="img\20220821054501437.ico" type="image/x-icon" />
+  <title>Romantic</title>
+  </head>
+
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="blog-title"
+              style="text-align: center;font-size: 40px;padding: 50px;margin-top: 50px;">
+        <div class="logo">康福饼❤️张果酱</div>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+      
+     </ul>
+    </nav>
+    </header>
+
+      <main class="main">
+<section class="date">
+    <div class="date" style="text-align: center;
+    max-width: 700px;
+    margin:30px auto;
+    padding:15px;
+    line-height: 1.7;">
+        <h1>
+            康 and
+                张 have been together for</h1>
+        <div class="timer">
+            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+        </div>
+        
+   
+    </div>
+
+    <!--计时器js-->
+    <script>
+        function timer() {
+            window.setTimeout("timer()", 1000);
+            var start = new Date("2021-10-4 22:33:44");
+            var t = new Date().getTime() - start;
+            var h = ~~(t / 1000 / 60 / 60 % 24);
+            if (h < 10) {
+                h = "0" + h;
+            }
+            var m = ~~(t / 1000 / 60 % 60);
+            if (m < 10) {
+                m = "0" + m;
+            }
+            var s = ~~(t / 1000 % 60);
+            if (s < 10) {
+                s = "0" + s;
+            }
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+            document.getElementById('h').innerHTML = h;
+            document.getElementById('m').innerHTML = m;
+            document.getElementById('s').innerHTML = s;
+        }
+        timer();
+    </script>
+    <!--END：计时器js-->
+
+    <!--鼠标点击显示爱心-->
+    <script src="./js/love.js"></script>
+    <!-- 樱花飘落 -->
+    <script src="./js/sakura.js"></script>
+</section>
+      </main>     
+    </div>
+    
+  </body>
+  
+</div>
+</html>
+
